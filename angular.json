@@ -1,0 +1,34 @@
+{
+    "version":1,
+    "projects": {
+        "purchaseapp": {
+            "projectType": "application",
+            "root": "",
+            "sourceRoot": "src",
+            "architect": {
+                "build": {
+                    "builder": "@argular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/purchaseapp",
+                        "index": "scr/index.html",
+                        "main":"scr/main.ts",
+                        "polyfills": "scr/polyfills.ts",
+                        "tsConfig":  "tsConfig.json",
+
+                        "assets": ["src/assets"],
+                        "aot": true
+                    }
+                },
+                "serve": {
+                    "builder": "@argular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "purchaseapp:build"
+                    }
+                }
+            }
+        }},
+        "defaultProject": "purchaseapp",
+        "cli": {
+            "analytics": false
+        }
+}
